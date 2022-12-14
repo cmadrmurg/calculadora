@@ -13,6 +13,7 @@ public class SimpleCalc {
             System.out.print("> ");
             entrada = sc.nextLine();
             int n1 = 0, n2 = 0;
+            
             if("+-x/".contains(entrada)){
                 System.out.print("Operando 1 > ");
                 n1 = sc.nextInt();
@@ -21,22 +22,21 @@ public class SimpleCalc {
             }else{
                 System.out.println("Operación incorrecta!");
             }
-            if(entrada.equals("+")){
-                System.out.println("%d+%d=%d".formatted(n1,n2,n1+n2));
-            }
-            
-            if(entrada.equals("-")){
-                System.out.println("%d-%d=%d".formatted(n1,n2,n1-n2));
-            }
-            
-            if(entrada.equals("x")){
-                System.out.println("%dx%d=%d".formatted(n1,n2,n1*n2));
-            }
-            
-            if(entrada.equals("/")){
-                System.out.println("%d/%d=%d".formatted(n1,n2,n1/n2));
-            }
-            
+            switch (entrada){
+                case "+":
+                    System.out.println("%d+%d=%d".formatted(n1,n2,n1+n2));
+                    break;
+                case "-":
+                    System.out.println("%d-%d=%d".formatted(n1,n2,n1-n2));
+                    break;
+                case "x":
+                     System.out.println("%dx%d=%d".formatted(n1,n2,n1*n2));
+                    break;
+                case "/":
+                    System.out.println("%d/%d=%d".formatted(n1,n2,n1/n2));
+                    break;
+      
+            }    
         }while(!entrada.equals(""));
     }
 }
